@@ -3,7 +3,7 @@ const movies = [
     {
         name: "Inception",
         poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
-        summary: "A skilled thief leads a team into people's dreams to steal secrets from their subconscious.",
+        summary: "Dom Cobb is a skilled thief in the art of ‘extraction’ — entering people’s dreams to steal deeply buried secrets. Haunted by the memory of his late wife Mal and driven by the desire to return to his children, he’s offered a final chance: instead of stealing an idea, he must plant one in the mind of Robert Fischer. With a team of specialists, Cobb descends through multiple layers of dream-worlds, where time dilates, paradoxes abound, and his own subconscious sabotages the mission. As reality and dream blur, Cobb must confront his guilt, face his demons, and find a way home. :contentReference[oaicite:0]{index=0}",
         imdb: "8.8",
         genre: "Sci-Fi",
         cast: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page", "Tom Hardy", "Marion Cotillard"]
@@ -11,7 +11,7 @@ const movies = [
     {
         name: "The Shawshank Redemption",
         poster: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
-        summary: "Two imprisoned men bond over a number of years, finding solace and eventual redemption.",
+        summary: "Andy Dufresne, a young banker, is convicted of murdering his wife and her lover and sent to the brutal Shawshank State Prison. Despite the injustice, Andy retains his dignity and hope, befriends longtime inmate Red, and uses his banking skills to improve prison life for his peers and curry favour with the warden. Over decades he endures corruption, abuse, and hopelessness — all the while secretly planning a daring escape. His story is about the power of friendship, perseverance and the belief that hope can set you free. :contentReference[oaicite:1]{index=1}",
         imdb: "9.3",
         genre: "Drama",
         cast: ["Tim Robbins", "Morgan Freeman", "Bob Gunton", "William Sadler", "Clancy Brown"]
@@ -19,7 +19,7 @@ const movies = [
     {
         name: "The Dark Knight",
         poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-        summary: "Batman must accept one of the greatest psychological and physical tests to fight injustice.",
+        summary: "Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
         imdb: "9.0",
         genre: "Action",
         cast: ["Christian Bale", "Heath Ledger", "Aaron Eckhart", "Michael Caine", "Gary Oldman"]
@@ -59,7 +59,7 @@ const movies = [
     {
         name: "Interstellar",
         poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-        summary: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+        summary: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity’s survival.",
         imdb: "8.6",
         genre: "Sci-Fi",
         cast: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain", "Michael Caine", "Matt Damon"]
@@ -75,7 +75,7 @@ const movies = [
     {
         name: "The Avengers",
         poster: "https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
-        summary: "Earth's mightiest heroes must come together to stop Loki and his alien army from enslaving humanity.",
+        summary: "Earth’s mightiest heroes must come together to stop Loki and his alien army from enslaving humanity.",
         imdb: "8.0",
         genre: "Action",
         cast: ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson"]
@@ -131,7 +131,7 @@ const movies = [
     {
         name: "Get Out",
         poster: "https://image.tmdb.org/t/p/w500/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",
-        summary: "A young African-American visits his white girlfriend's parents for the weekend and uncovers a sinister secret.",
+        summary: "A young African-American visits his white girlfriend’s parents for the weekend and uncovers a sinister secret.",
         imdb: "7.7",
         genre: "Thriller",
         cast: ["Daniel Kaluuya", "Allison Williams", "Bradley Whitford", "Catherine Keener", "Caleb Landry Jones"]
@@ -139,7 +139,7 @@ const movies = [
     {
         name: "Toy Story",
         poster: "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
-        summary: "A cowboy doll is profoundly threatened when a new spaceman figure supplants him as top toy in a boy's room.",
+        summary: "A cowboy doll is profoundly threatened when a new spaceman figure supplants him as top toy in a boy’s room.",
         imdb: "8.3",
         genre: "Animation",
         cast: ["Tom Hanks", "Tim Allen", "Don Rickles", "Jim Varney", "Wallace Shawn"]
@@ -147,7 +147,7 @@ const movies = [
     {
         name: "Finding Nemo",
         poster: "https://image.tmdb.org/t/p/w500/eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg",
-        summary: "After his son is captured, a timid clownfish sets out on a journey to bring him home.",
+        summary: "After his son is captured, a timid clownfish sets out on a journey across the ocean to bring him home.",
         imdb: "8.1",
         genre: "Animation",
         cast: ["Albert Brooks", "Ellen DeGeneres", "Alexander Gould", "Willem Dafoe", "Brad Garrett"]
@@ -163,7 +163,7 @@ const movies = [
     {
         name: "Blade Runner 2049",
         poster: "https://image.tmdb.org/t/p/w500/aMpyrCizvSdc0UIMblJ1srVgAEF.jpg",
-        summary: "A young blade runner's discovery of a hidden secret leads him to track down former blade runner Rick Deckard.",
+        summary: "A young blade runner’s discovery of a hidden secret leads him to track down former blade runner Rick Deckard.",
         imdb: "8.0",
         genre: "Sci-Fi",
         cast: ["Ryan Gosling", "Harrison Ford", "Ana de Armas", "Sylvia Hoeks", "Jared Leto"]
@@ -195,7 +195,7 @@ const movies = [
     {
         name: "Coco",
         poster: "https://image.tmdb.org/t/p/w500/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
-        summary: "A young musician embarks on an extraordinary journey through the Land of the Dead to unlock his family's history.",
+        summary: "A young musician embarks on an extraordinary journey through the Land of the Dead to unlock his family’s history.",
         imdb: "8.4",
         genre: "Animation",
         cast: ["Anthony Gonzalez", "Gael García Bernal", "Benjamin Bratt", "Alanna Ubach", "Renée Victor"]
@@ -219,7 +219,7 @@ const movies = [
     {
         name: "Avengers: Endgame",
         poster: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-        summary: "The Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+        summary: "The Avengers assemble once more in order to reverse Thanos’ actions and restore balance to the universe.",
         imdb: "8.4",
         genre: "Action",
         cast: ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson"]
