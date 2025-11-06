@@ -3,7 +3,7 @@ const movies = [
     {
         name: "Inception",
         poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
-        summary: "Dom Cobb is a skilled thief in the art of ‘extraction’ — entering people’s dreams to steal deeply buried secrets. Haunted by the memory of his late wife Mal and driven by the desire to return to his children, he’s offered a final chance: instead of stealing an idea, he must plant one in the mind of Robert Fischer. With a team of specialists, Cobb descends through multiple layers of dream-worlds, where time dilates, paradoxes abound, and his own subconscious sabotages the mission. As reality and dream blur, Cobb must confront his guilt, face his demons, and find a way home. :contentReference[oaicite:0]{index=0}",
+        summary: "Dom Cobb is a skilled thief in the art of ‘extraction’ — entering people’s dreams to steal deeply buried secrets. Haunted by the memory of his late wife Mal and driven by the desire to return to his children, he’s offered a final chance: instead of stealing an idea, he must plant one in the mind of Robert Fischer. With a team of specialists, Cobb descends through multiple layers of dream-worlds, where time dilates, paradoxes abound, and his own subconscious sabotages the mission. As reality and dream blur, Cobb must confront his guilt, face his demons, and find a way home. ",
         imdb: "8.8",
         genre: "Sci-Fi",
         cast: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page", "Tom Hardy", "Marion Cotillard"]
@@ -11,7 +11,7 @@ const movies = [
     {
         name: "The Shawshank Redemption",
         poster: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
-        summary: "Andy Dufresne, a young banker, is convicted of murdering his wife and her lover and sent to the brutal Shawshank State Prison. Despite the injustice, Andy retains his dignity and hope, befriends longtime inmate Red, and uses his banking skills to improve prison life for his peers and curry favour with the warden. Over decades he endures corruption, abuse, and hopelessness — all the while secretly planning a daring escape. His story is about the power of friendship, perseverance and the belief that hope can set you free. :contentReference[oaicite:1]{index=1}",
+        summary: "Andy Dufresne, a young banker, is convicted of murdering his wife and her lover and sent to the brutal Shawshank State Prison. Despite the injustice, Andy retains his dignity and hope, befriends longtime inmate Red, and uses his banking skills to improve prison life for his peers and curry favour with the warden. Over decades he endures corruption, abuse, and hopelessness — all the while secretly planning a daring escape. His story is about the power of friendship, perseverance and the belief that hope can set you free. ",
         imdb: "9.3",
         genre: "Drama",
         cast: ["Tim Robbins", "Morgan Freeman", "Bob Gunton", "William Sadler", "Clancy Brown"]
