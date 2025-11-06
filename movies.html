@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieHub - Movies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🎬 MovieHub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html" class="active">Movies</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Browse Movies</h1>
+        <p>Search and filter through our collection</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Search and Filter Section -->
+        <div class="filters">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search movies by name...">
+            </div>
+            <div class="filter-box">
+                <select id="genreFilter">
+                    <option value="all">All Genres</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Movies Grid -->
+        <div class="movies-grid" id="moviesGrid"></div>
+        <div class="no-results" id="noResults" style="display: none;">
+            No movies found matching your criteria.
+        </div>
+    </div>
+
+    <!-- Movie Detail Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <img id="modalPoster" class="modal-poster" src="" alt="">
+                <div class="modal-overlay">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <div class="modal-meta">
+                        <div id="modalRating" class="modal-rating"></div>
+                        <div id="modalGenre" class="modal-genre"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Overview</h3>
+                    <p id="modalSummary"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Cast</h3>
+                    <div class="cast-list" id="modalCast"></div>
+                </div>
+                <div class="modal-section">
+                    <h3>Details</h3>
+                    <div class="modal-details">
+                        <div class="detail-item">
+                            <div class="detail-label">IMDb Rating</div>
+                            <div class="detail-value" id="modalDetailRating"></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Genre</div>
+                            <div class="detail-value" id="modalDetailGenre"></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Title</div>
+                            <div class="detail-value" id="modalDetailTitle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 MovieHub. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="movies.js"></script>
+    <script>
+        let filteredMovies = [...movies];
+
+        // Initialize page
+        function init() {
+            populateGenreFilter();
+            displayMovies(movies);
+            setupEventListeners();
+        }
+
+        // Populate genre filter dropdown
+        function populateGenreFilter() {
+            const genreFilter = document.getElementById('genreFilter');
+            const genres = getGenres();
+            
+            genres.forEach(genre => {
+                const option = document.createElement('option');
+                option.value = genre;
+                option.textContent = genre;
+                genreFilter.appendChild(option);
+            });
+        }
+
+        // Display movies
+        function displayMovies(moviesToDisplay) {
+            const moviesGrid = document.getElementById('moviesGrid');
+            const noResults = document.getElementById('noResults');
+            
+            moviesGrid.innerHTML = '';
+
+            if (moviesToDisplay.length === 0) {
+                moviesGrid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            moviesGrid.style.display = 'grid';
+            noResults.style.display = 'none';
+
+            moviesToDisplay.forEach(movie => {
+                const movieCard = createMovieCard(movie);
+                moviesGrid.appendChild(movieCard);
+            });
+        }
+
+        // Create movie card element
+        function createMovieCard(movie) {
+            const card = document.createElement('div');
+            card.className = 'movie-card';
+            
+            card.innerHTML = `
+                <img src="${movie.poster}" alt="${movie.name}" class="movie-poster" onerror="this.src='https://via.placeholder.com/280x400?text=${encodeURIComponent(movie.name)}'">
+                <div class="movie-info">
+                    <div class="movie-header">
+                        <h3 class="movie-title">${movie.name}</h3>
+                        <div class="movie-rating">${movie.imdb}</div>
+                    </div>
+                    <span class="movie-genre">${movie.genre}</span>
+                    <p class="movie-summary">${movie.summary}</p>
+                </div>
+            `;
+            
+            // Add click event to open modal
+            card.addEventListener('click', () => openModal(movie));
+            
+            return card;
+        }
+
+        // Open modal with movie details
+        function openModal(movie) {
+            const modal = document.getElementById('movieModal');
+            
+            // Populate modal with movie data
+            document.getElementById('modalPoster').src = movie.poster;
+            document.getElementById('modalTitle').textContent = movie.name;
+            document.getElementById('modalRating').textContent = movie.imdb;
+            document.getElementById('modalGenre').textContent = movie.genre;
+            document.getElementById('modalSummary').textContent = movie.summary;
+            document.getElementById('modalDetailRating').textContent = movie.imdb + '/10';
+            document.getElementById('modalDetailGenre').textContent = movie.genre;
+            document.getElementById('modalDetailTitle').textContent = movie.name;
+            
+            // Populate cast list
+            const castList = document.getElementById('modalCast');
+            castList.innerHTML = '';
+            if (movie.cast && movie.cast.length > 0) {
+                movie.cast.forEach(actor => {
+                    const castMember = document.createElement('div');
+                    castMember.className = 'cast-member';
+                    castMember.textContent = actor;
+                    castList.appendChild(castMember);
+                });
+            } else {
+                castList.innerHTML = '<p style="color: #999;">Cast information not available</p>';
+            }
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal() {
+            const modal = document.getElementById('movieModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('movieModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Filter movies based on search and genre
+        function filterMovies() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedGenre = document.getElementById('genreFilter').value;
+
+            filteredMovies = movies.filter(movie => {
+                const matchesSearch = movie.name.toLowerCase().includes(searchTerm);
+                const matchesGenre = selectedGenre === 'all' || movie.genre === selectedGenre;
+                return matchesSearch && matchesGenre;
+            });
+
+            displayMovies(filteredMovies);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            const searchInput = document.getElementById('searchInput');
+            const genreFilter = document.getElementById('genreFilter');
+
+            searchInput.addEventListener('input', filterMovies);
+            genreFilter.addEventListener('change', filterMovies);
+        }
+
+        // Initialize on page load
+        init();
+    </script>
+</body>
+</html>
